@@ -1,4 +1,12 @@
-FROM node:12-stretch
+FROM node:12-stretch-slim
+
+# for envsubst
+RUN apt-get update \
+  && apt-get install --no-install-recommends -y \
+    curl \
+    ca-certificates \
+    gnupg \
+  && rm -rf /var/lib/apt/lists/*
 
 # Source: https://docs.gitlab.com/runner/install/linux-repository.html#installing-the-runner
 RUN curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh | bash \
