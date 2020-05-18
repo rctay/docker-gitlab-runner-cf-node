@@ -8,6 +8,7 @@ An image installed with:
 ## Usage
  
 - Environment variables:
-  - `GITLAB_RUNNER_TOKEN`
   - `GITLAB_RUNNER_NAME`
+  - `GITLAB_RUNNER_TOKEN`
+  - `GITLAB_RUNNER_TAGS`
 - Assumes a volume is mounted at `/home/gitlab-runner/cache`

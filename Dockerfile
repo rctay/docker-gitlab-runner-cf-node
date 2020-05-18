@@ -12,13 +12,6 @@ RUN wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.k
   && apt-get install --no-install-recommends -y cf-cli \
   && rm -rf /var/lib/apt/lists/*
 
-# for envsubst
-RUN apt-get update \
-  && apt-get install --no-install-recommends -y \
-   gettext \
-  && rm -rf /var/lib/apt/lists/*
-
-COPY config.toml.tmpl /opt/src/
 COPY prepare.sh /opt/src/
 
 ENTRYPOINT []
