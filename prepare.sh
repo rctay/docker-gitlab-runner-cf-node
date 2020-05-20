@@ -5,6 +5,8 @@ gitlab-runner register \
   --url "$GITLAB_RUNNER_URL" \
   --registration-token "$GITLAB_RUNNER_TOKEN" \
   --executor "shell" \
+  --builds-dir "/home/gitlab-runner/builds" \
+  --cache-dir "/home/gitlab-runner/cache" \
   --tag-list "$GITLAB_RUNNER_TAGS"
 echo Starting runner with config:
 cat /etc/gitlab-runner/config.toml
