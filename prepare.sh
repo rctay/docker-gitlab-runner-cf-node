@@ -1,5 +1,7 @@
 set -e
-chown gitlab-runner:gitlab-runner /home/gitlab-runner/cache
+if [ "$GITLAB_CHOWN_CACHE" = "1" ]; then
+  chown gitlab-runner:gitlab-runner /home/gitlab-runner/cache
+fi
 if [ -z "$GITLAB_NEEDS_REGISTRATION" ]; then
   envsubst '${GITLAB_RUNNER_URL},${GITLAB_RUNNER_TOKEN},${GITLAB_RUNNER_NAME}' < /opt/src/config.toml.tmpl > /etc/gitlab-runner/config.toml
 else

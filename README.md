@@ -13,7 +13,7 @@ If you want to register a fresh runner, set `GITLAB_NEEDS_REGISTRATION` and:
 Otherwise, leave `GITLAB_NEEDS_REGISTRATION` empty and:
 - set `GITLAB_RUNNER_TOKEN` to the registration token, and the [variables here](#common_variables) to the values you intend to perform a registration with
 
-Assumes a volume is mounted at `/home/gitlab-runner/cache`.
+Assumes a volume is mounted at `/home/gitlab-runner/cache`; if you wish to change ownership to `gitlab-runner`, set `$GITLAB_CHOWN_CACHE`.
 
 ## Common variables
 
