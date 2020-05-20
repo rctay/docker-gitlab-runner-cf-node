@@ -1,11 +1,15 @@
 FROM node:12-stretch-slim
 
 # for adding a repository: curl, ca-certificates, gnupg
+# for node-gyp: python3, make, g++
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
     curl \
     ca-certificates \
     gnupg \
+    python3 \
+    make \
+    g++ \
   && rm -rf /var/lib/apt/lists/*
 
 # Source: https://docs.gitlab.com/runner/install/linux-repository.html#installing-the-runner
