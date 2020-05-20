@@ -1,6 +1,6 @@
 FROM node:12-stretch-slim
 
-# for envsubst
+# for adding a repository: curl, ca-certificates, gnupg
 RUN apt-get update \
   && apt-get install --no-install-recommends -y \
     curl \
